@@ -1,0 +1,12 @@
+order_id,city,distance_km,delivery_hours,shipping_cost_inr,items,delivery_hours_was_missing,shipping_cost_inr_was_missing,delivery_hours_outlier
+L001,Hyderabad,12.0,8.0,180.0,2.0,0,0,0
+L002,Hyderabad,18.0,10.0,220.0,1.0,0,0,0
+L003,Warangal,65.0,18.0,480.0,3.0,0,0,0
+L004,Karimnagar,150.0,30.0,900.0,4.0,0,0,0
+L005,Hyderabad,9.0,7.0,160.0,1.0,0,0,0
+L006,Nalgonda,85.0,18.5,560.0,2.0,1,0,0
+L007,Warangal,70.0,20.0,490.0,2.0,0,1,0
+L008,Karimnagar,145.0,28.0,870.0,5.0,0,0,0
+L009,Nalgonda,90.0,120.0,600.0,1.0,0,0,1
+L010,Hyderabad,14.0,9.0,190.0,2.0,0,0,0
+L011,Warangal,72.0,19.0,500.0,3.0,0,0,0

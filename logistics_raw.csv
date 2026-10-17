@@ -1,0 +1,13 @@
+order_id,city,distance_km,delivery_hours,shipping_cost_inr,items
+L001,Hyderabad,12,8,180,2
+L002,hyderabad ,18,10,220,1
+L003,Warangal,65,18,480,3
+L004,Karimnagar,150,30,900,4
+L005,HYDERABAD,9,7,160,1
+L006,Nalgonda,85,,560,2
+L007,Warangal,70,20,,2
+L008,Karimnagar,145,28,870,5
+L009,Nalgonda,90,120,600,1
+L010,Hyderabad,14,9,190,2
+L011,Warangal,72,19,500,3
+L011,Warangal,72,19,500,3
