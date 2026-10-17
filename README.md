@@ -1,45 +1,76 @@
-# Week 2: Logistics Data Collection, Cleaning, and Preprocessing
+# Week 2: Data Collection, Cleaning, and Preprocessing for Logistics Analysis
 
-A reproducible educational project demonstrating Python preprocessing of simulated e-commerce logistics orders.
+## Project Overview
+
+This project focuses on implementing a structured data preprocessing pipeline for logistics analysis using Python. It demonstrates how raw logistics data can be transformed into a clean, consistent, and analysis-ready dataset.
+
+The project uses a simulated e-commerce logistics dataset to identify and resolve common data quality issues, including missing values, duplicate records, inconsistent formatting, and outliers.
 
 ## Objectives
-- Validate data types and detect invalid values
-- Remove duplicate order IDs
-- Standardize city names
-- Flag and impute missing numeric data
-- Detect delivery-time outliers using IQR
-- Normalize modelling features using Min-Max scaling
-- Connect data quality to logistics decision-making
 
-## Dataset
-The 12-row **synthetic** CSV contains order ID, city, distance (km), delivery duration (hours), shipping cost (INR), and item count. It intentionally includes one duplicate order, two missing values, inconsistent city formatting, and a 120-hour delivery-time anomaly. It is not a real company's data.
+- Simulate logistics data collection and explore dataset characteristics.
+- Identify and handle missing and invalid data.
+- Detect duplicate records and potential outliers.
+- Standardize categorical variables and normalize numerical features.
+- Implement data preprocessing techniques using Python.
+- Explain how improved data quality supports logistics operations and decision-making.
 
-## Run
-```bash
-pip install -r requirements.txt
-python src/preprocess_logistics.py
-```
+## Technologies Used
 
-The script writes `data/logistics_cleaned.csv` and `data/logistics_preprocessed_for_model.csv`.
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Matplotlib
+- CSV
 
-## Example results
-| Metric | Raw | Cleaned |
-|---|---:|---:|
-| Records | 12 | 11 |
-| Duplicate order IDs | 1 | 0 |
-| Missing delivery durations | 1 | 0 after median imputation |
-| Missing shipping costs | 1 | 0 after median imputation |
+## Methodology
 
-The original 120-hour delay remains in the cleaned file and is flagged for review; a separate capped field is created only in the modelling copy.
+**1. Data Collection:** Prepare a simulated logistics dataset containing order IDs, delivery locations, distances, delivery durations, shipping costs, and item quantities.
 
-## Stakeholder use
-Operations can review delivery-delay exceptions, finance can investigate abnormal shipping costs, and analysts can report missingness and transformation logs. Use verified data for official KPIs; imputed values should not be presented as observed facts.
+**2. Data Exploration:** Examine data types, missing values, duplicate records, and descriptive statistics.
 
-## Contents
-- `report/`: detailed Word report
-- `data/`: synthetic raw and generated cleaned datasets
-- `src/`: preprocessing pipeline
-- `requirements.txt`: Python dependencies
+**3. Data Cleaning:** Remove duplicate records, standardize city names, validate numerical values, and handle missing data using median imputation.
 
-## Limitations
-This small simulated dataset illustrates methodology, not real operational findings. Min-Max scaling is fitted on the full sample for demonstration; production predictive models should fit scalers only on training data.
+**4. Outlier Detection:** Apply the Interquartile Range (IQR) method to identify unusual delivery durations while preserving original observations for investigation.
+
+**5. Data Normalization:** Apply Min-Max scaling to selected numerical features to prepare them for further analytical modelling.
+
+**6. Data Validation:** Verify dataset consistency, uniqueness, completeness, and numerical validity.
+
+## Illustrative Results
+
+The simulated dataset demonstrates the following preprocessing improvements:
+
+| Data Quality Metric | Before | After |
+|---|---|---|
+| Total records | 12 | 11 |
+| Duplicate order records | 1 | 0 |
+| Missing delivery durations | 1 | 0 after imputation |
+| Missing shipping costs | 1 | 0 after imputation |
+| City name formatting | Inconsistent | Standardized |
+| Extreme delivery durations | Present | Flagged for investigation |
+
+These figures describe a simulated educational example, not actual logistics company performance.
+
+## Business Applications
+
+Cleaned logistics data can support:
+
+- Delivery time and route performance analysis.
+- Transportation cost optimization.
+- Identification of unusual delivery delays.
+- Operational reporting and KPI monitoring.
+- More reliable forecasting and data-driven decisions.
+
+## Stakeholder Communication
+
+Preprocessing results can be communicated through weekly operational dashboards, monthly cost reports, data-quality summaries, and management reviews.
+
+The insights can help logistics managers identify inefficient routes, finance teams investigate abnormal costs, and management prioritize operational improvements.
+
+## Conclusion
+
+This project demonstrates the importance of data quality in logistics analytics. By applying systematic cleaning, validation, outlier detection, and normalization techniques, raw data can be prepared for meaningful analysis and future predictive modelling.
+
+**Note:** The dataset is simulated for educational purposes. The preprocessing techniques can be adapted to real logistics datasets.
